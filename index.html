@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DualPM: Dual Posed-Canonical Point Maps for 3D Shape and Pose Reconstruction</title>
-    <meta name="description" content="DualPM: Dual Posed-Canonical Point Maps for 3D Shape and Pose Reconstruction">
+    <title>VMem: Consistent Scene Generation with Surfel Memory of Views</title>
+    <meta name="description" content="VMem: Consistent Scene Generation with Surfel Memory of Views">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
@@ -52,24 +52,19 @@
           <div class="row">
             <div class="col-md-12">
               <div class="heading-light text-center mb-medium">
-                <h1>DualPM: Dual Posed-Canonical Point Maps
-                  for 3D Shape and Pose Reconstruction</h1>
+                <h1>VMem: Consistent Scene Generation with Surfel Memory of Views</h1>
               </div>
               <p class="lead text-md-center">
-                <a href="#">Ben Kaye</a><sup>*, 1</sup>,
-                <a href="http://www.robots.ox.ac.uk/~tomj/">Tomas Jakab</a><sup>*, 1</sup>,
-                <a href="https://elliottwu.com/">Shangzhe Wu</a><sup>2</sup>,
-                <a href="https://chrirupp.github.io/">Christian Rupprecht</a><sup>1</sup>,
-                <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a><sup>1</sup>
+                <a href="https://runjiali-rl.github.io/">Runjia Li</a>,
+                <a href="https://www.robots.ox.ac.uk/~phst/">Philip Torr</a>,
+                <a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi</a>,
+                <a href="http://www.robots.ox.ac.uk/~tomj/">Tomas Jakab</a>
                 <br>
-                <sup>1</sup>University of Oxford,
-                <sup>2</sup>Stanford University
+                University of Oxford
+             
+                <strong>ArXiv 2025</strong>
                 <br>
-                <span class="smaller">(* equal contribution)</span>
-                <br>
-                <strong>In CVPR 2025</strong>
-                <br>
-                <strong class="text-dark-red">Conference highlight</strong>
+                <!-- <strong class="text-dark-red">Conference highlight</strong> -->
               </p>
               
               <p class="lead">
@@ -84,9 +79,18 @@
                 </div>
               </p>
 
-              <p class="lead">
+              <!-- <p class="lead">
                 We introduce <strong>Dual Point Maps (DualPM)</strong>, which reduce key tasks in the analysis of deformable objects to mapping an image of an object to its Dual Point Maps—a pair of <strong>point maps</strong> defined in <strong>camera</strong> space and <strong>canonical</strong> space.
                 DualPMs are easy to predict with a neural network, enabling effective <strong>3D object reconstruction</strong> and facilitating geometric tasks such as <strong>3D keypoint</strong> detection, <strong>3D viewpoint</strong> estimation, fitting a <strong>3D skeleton</strong>, and performing <strong>animation</strong> and <strong>motion transfer</strong>.
+              </p> -->
+
+              <p class="lead">
+                We propose a novel <strong>memory mechanism</strong> for consistent autoregressive scene generation in the form of a camera-conditioned video stream.
+                Existing methods either rely on explicit geometry estimation in inpainting-based approaches, which suffer from geometric inaccuracies, or use a limited context window in video-based approaches, which struggle with long-term coherence.
+                To address these limitations, we introduce <strong>Surfel Memory of Views (VMem)</strong>, a mechanism that anchors past views to <strong>surface elements (surfels)</strong> they previously observed.
+                This allows us to retrieve and condition novel view generation on <strong>the most relevant past views</strong> rather than just the latest ones.
+                By leveraging information about the scene's geometric structure, our method significantly enhances <strong>long-term scene consistency</strong> while reducing computational overhead.
+        
               </p>
 
               <div class="see-more text-center">
