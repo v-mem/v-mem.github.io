@@ -63,7 +63,6 @@
                 University of Oxford
                 <br>
                 <br>
-             
                 <strong>ArXiv 2025</strong>
                 <br>
                 <!-- <strong class="text-dark-red">Conference highlight</strong> -->
@@ -87,12 +86,10 @@
               </p> -->
 
               <p class="lead">
-                We propose a novel <strong>memory mechanism</strong> for consistent autoregressive scene generation in the form of a camera-conditioned video stream.
-                Existing methods either rely on explicit geometry estimation in inpainting-based approaches, which suffer from geometric inaccuracies, or use a limited context window in video-based approaches, which struggle with long-term coherence.
-                To address these limitations, we introduce <strong>Surfel Memory of Views (VMem)</strong>, a mechanism that anchors past views to <strong>surface elements (surfels)</strong> they previously observed.
-                This allows us to retrieve and condition novel view generation on <strong>the most relevant past views</strong> rather than just the latest ones.
-                By leveraging information about the scene's geometric structure, our method significantly enhances <strong>long-term scene consistency</strong> while reducing computational overhead.
-        
+                We propose a novel <strong>memory mechanism</strong> for consistent autoregressive scene generation conditioned on camera input. 
+                Existing methods either rely on inpainting with explicit geometry estimation, which suffers from inaccuracies, or use limited context windows in video-based approaches, leading to poor long-term coherence. 
+                To overcome these issues, we introduce <strong>Surfel Memory of Views (VMem)</strong>, which anchors past views to <strong>surface elements (surfels)</strong> they observed. 
+                This enables conditioning novel view generation on <strong>the most relevant past views</strong> rather than just the most recent ones, enhancing <strong>long-term scene consistency</strong> while reducing computational cost.
               </p>
 
               <div class="see-more text-center">
