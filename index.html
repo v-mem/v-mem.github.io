@@ -69,22 +69,53 @@
                 <!-- <strong class="text-dark-red">Conference highlight</strong> -->
               </p>
               
-              <p class="lead">
-                <div class="row text-center no-space">
-                  <div class="col-md-12">
-                    <div class="img-fluid embed-responsive embed-responsive-16by9">
-                      <video autoplay loop muted playsinline inline>
-                        <source src="img/teaser.mp4" type="video/mp4">
-                      </video>
-                    </div>
+              <!-- Qualitative Results moved here -->
+              <div class="container">
+                <!-- Main display row -->
+                <div class="row mb-4">
+                  <div class="col-md-6 text-center">
+                    <h5>Input image</h5>
+                    <img id="inputImage" src="img/input_2_resized.png" class="img-fluid rounded shadow-sm" alt="Input Image">
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h5>Generated video</h5>
+                    <video id="generatedVideo" autoplay loop muted playsinline inline class="img-fluid rounded shadow-sm">
+                      <source src="img/2_adjusted.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </div>
-              </p>
 
-              <!-- <p class="lead">
-                We introduce <strong>Dual Point Maps (DualPM)</strong>, which reduce key tasks in the analysis of deformable objects to mapping an image of an object to its Dual Point Maps—a pair of <strong>point maps</strong> defined in <strong>camera</strong> space and <strong>canonical</strong> space.
-                DualPMs are easy to predict with a neural network, enabling effective <strong>3D object reconstruction</strong> and facilitating geometric tasks such as <strong>3D keypoint</strong> detection, <strong>3D viewpoint</strong> estimation, fitting a <strong>3D skeleton</strong>, and performing <strong>animation</strong> and <strong>motion transfer</strong>.
-              </p> -->
+                <!-- Thumbnail carousel -->
+                <div class="d-flex flex-wrap justify-content-center gap-2 py-3 px-3 bg-light rounded" id="thumbnailCarousel">
+                  <img src="img/input_2_resized.png" data-img="img/input_2_resized.png" data-video="img/2_adjusted.mp4" class="thumb active border border-warning rounded" style="height: 80px; cursor: pointer;">
+                  <img src="img/input_1_resized.png" data-img="img/input_1_resized.png" data-video="img/1_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
+                  <img src="img/input_3_resized.png" data-img="img/input_3_resized.png" data-video="img/3_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
+                  <img src="img/input_4_resized.png" data-img="img/input_4_resized.png" data-video="img/4_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
+                  <img src="img/input_0_resized.png" data-img="img/input_0_resized.png" data-video="img/0_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
+                  <!-- Add more thumbnails as needed -->
+                </div>
+              </div>
+
+              <script>
+                // Thumbnail interaction script
+                const thumbnails = document.querySelectorAll('#thumbnailCarousel img');
+                const inputImg = document.getElementById('inputImage');
+                const video = document.getElementById('generatedVideo');
+
+                thumbnails.forEach(thumb => {
+                  thumb.addEventListener('click', () => {
+                    // Remove 'active' class from all
+                    thumbnails.forEach(t => t.classList.remove('active', 'border-warning'));
+                    thumb.classList.add('active', 'border-warning');
+
+                    // Update input image and video
+                    inputImg.src = thumb.dataset.img;
+                    video.querySelector('source').src = thumb.dataset.video;
+                    video.load();
+                  });
+                });
+              </script>
 
               <p class="lead">
                 We propose a novel <strong>memory mechanism</strong> for consistent autoregressive scene generation conditioned on camera input. 
@@ -107,59 +138,22 @@
         </div>
       </section>
 
-
-
       <section class="bar bg-white padding-small">
         <div class="container">
-          <!-- <h2 class="text-center mb-4">Qualitative Results</h2> -->
-
-          <!-- Main display row -->
-          <div class="row mb-4">
-            <div class="col-md-6 text-center">
-              <h5>Input image</h5>
-              <img id="inputImage" src="img/input_2_resized.png" class="img-fluid rounded shadow-sm" alt="Input Image">
+          <!-- Teaser video moved here -->
+          <p class="lead">
+            <div class="row text-center no-space">
+              <div class="col-md-12">
+                <div class="img-fluid embed-responsive embed-responsive-16by9">
+                  <video autoplay loop muted playsinline inline>
+                    <source src="img/teaser.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6 text-center">
-              <h5>Generated video</h5>
-              <video id="generatedVideo" autoplay loop muted playsinline inline class="img-fluid rounded shadow-sm">
-                <source src="img/2_adjusted.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
-          <!-- Thumbnail carousel -->
-          <div class="d-flex flex-wrap justify-content-center gap-2 py-3 px-3 bg-light rounded" id="thumbnailCarousel">
-            <img src="img/input_2_resized.png" data-img="img/input_2_resized.png" data-video="img/2_adjusted.mp4" class="thumb active border border-warning rounded" style="height: 80px; cursor: pointer;">
-            <img src="img/input_1_resized.png" data-img="img/input_1_resized.png" data-video="img/1_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
-            <img src="img/input_3_resized.png" data-img="img/input_3_resized.png" data-video="img/3_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
-            <img src="img/input_4_resized.png" data-img="img/input_4_resized.png" data-video="img/4_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
-            <img src="img/input_0_resized.png" data-img="img/input_0_resized.png" data-video="img/0_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
-            <!-- Add more thumbnails as needed -->
-          </div>
+          </p>
         </div>
       </section>
-
-      <script>
-        // Thumbnail interaction script
-        const thumbnails = document.querySelectorAll('#thumbnailCarousel img');
-        const inputImg = document.getElementById('inputImage');
-        const video = document.getElementById('generatedVideo');
-
-        thumbnails.forEach(thumb => {
-          thumb.addEventListener('click', () => {
-            // Remove 'active' class from all
-            thumbnails.forEach(t => t.classList.remove('active', 'border-warning'));
-            thumb.classList.add('active', 'border-warning');
-
-            // Update input image and video
-            inputImg.src = thumb.dataset.img;
-            video.querySelector('source').src = thumb.dataset.video;
-            video.load();
-          });
-        });
-      </script>
-
 
       <section class="bar bg-white mb-0 padding-small">
         <div class="container">
