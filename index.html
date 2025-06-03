@@ -172,7 +172,7 @@
                 Our method retrieves the most relevant past views from the surfel-indexed memory using the target camera as a query.
               </p>
               <p class="lead mb-small"> 
-                TEach reference view is represented by a Plücker embedding and encoded using a VAE. These embeddings and latents are combined with the target Plücker embedding and input noise to generate the novel view. 
+                Each reference view is represented by a Plücker embedding and encoded using a VAE. These embeddings and latents are combined with the target Plücker embedding and input noise to generate the novel view. 
               </p>
               <p class="lead mb-small"> 
                 The generated view is then written back into the memory by updating the surfels or adding new ones based on the predicted geometry. This process is repeated autoregressively for each new view.
