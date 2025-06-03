@@ -147,185 +147,58 @@
         </div>
       </section>
 
-      <!-- <section class="bar bg-white mb-0 padding-small">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Single-view 3D Reconstruction</h2>
-              <div class="mb-medium">
-                <p class="lead mb-small">
-                  DualPM reconstructs a wide range of shapes within the object category, capturing <strong>fine details</strong> such as ears and legs, despite not being trained on any real images.  
-                  For visualization, we color each point with its coordinate in the canonical space.                                  
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row text-center">
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/examples/2008_008193_1_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/examples-lod0/2008_008193_1_pcan.glb" loading="lazy" reveal="manual" camera-controls auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/examples-lod0/2008_008193_1_pcan.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/examples/2008_002589_2_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/examples-lod0/2008_002589_2_pcan.glb" loading="lazy" reveal="manual" camera-controls auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/examples-lod0/2008_002589_2_pcan.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row text-center">
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/examples/2008_005166_2_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/examples-lod0/2008_005166_2_pcan.glb" loading="lazy" reveal="manual" camera-controls auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/examples-lod0/2008_005166_2_pcan.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/examples/2008_004911_1_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/examples-lod0/2008_004911_1_pcan.glb" loading="lazy" reveal="manual" camera-controls auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/examples-lod0/2008_004911_1_pcan.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row text-center">
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/examples/2009_003572_1_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/examples-lod0/2009_003572_1_pcan.glb" loading="lazy" reveal="manual" camera-controls auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/examples-lod0/2009_003572_1_pcan.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/examples/2010_005919_1_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/examples-lod0/2010_005919_1_pcan.glb" loading="lazy" reveal="manual" camera-controls auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/examples-lod0/2010_005919_1_pcan.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-          
-      <section class="bar bg-white mb-0 padding-small">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Animation</h2>
-              <div class="mb-medium">
-                <p class="lead mb-small">
-                  DualPM allows us to fit a 3D articulated skeleton to the predictions and animate the models with motion retargeting.
-                </p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="row text-center">
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/examples/2008_008193_1_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/anims-lod0/anim_2008_008193_1.glb" loading="lazy" reveal="manual" camera-controls autoplay auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/anims-lod0/anim_2008_008193_1.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/examples/2010_005919_1_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/anims-lod0/anim_2010_005919_1.glb" loading="lazy" reveal="manual" camera-controls autoplay auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/anims-lod0/anim_2010_005919_1.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
 
-      <section class="bar bg-white mb-0 padding-small">
+      <!-- Add this section into your existing HTML, after "<section class='bar bg-white mb-0 padding-small'>...</section>" where you want the interactive demo to appear -->
+      <section class="bar bg-white padding-small">
         <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Zero-shot Generalization</h2>
-              <div class="mb-medium">
-                <p class="lead mb-small">
-                  DualPM generalizes to unseen quadrupeds.
-                </p>
-              </div>
+          <h2 class="text-center mb-4">Interactive Demo Viewer</h2>
+
+          <!-- Main display row -->
+          <div class="row mb-4">
+            <div class="col-md-6 text-center">
+              <h5>Input image</h5>
+              <img id="inputImage" src="img/demo/input4.jpg" class="img-fluid rounded shadow-sm" alt="Input Image">
+            </div>
+            <div class="col-md-6 text-center">
+              <h5>Generated video</h5>
+              <video id="generatedVideo" controls autoplay loop muted playsinline class="img-fluid rounded shadow-sm">
+                <source src="img/2_adjusted.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
-      
-          <div class="row text-center">
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/ood/2009_003510_1_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/ood-lod0/2009_003510_1_pcan.glb" loading="lazy" reveal="manual" camera-controls auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/ood-lod0/2009_003510_1_pcan.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-small">
-              <div class="row">
-                <div class="col-6">
-                  <img src="img/ood/2009_004171_1_rgb.jpg" alt="" class="img-fluid image">
-                </div>
-                <div class="col-6">
-                  <model-viewer src="img/ood-lod0/2009_004171_1_pcan.glb" loading="lazy" reveal="manual" camera-controls auto-rotate tone-mapping="neutral" shadow-intensity="1" style="width: 100%; height: 100%;" poster="img/ood-lod0/2009_004171_1_pcan.webp">
-                    <div class="btn btn-template-outlined btn-load">Load 3D Model</div>
-                  </model-viewer> 
-                </div>
-              </div>
-            </div>
-          </div>  
+
+          <!-- Thumbnail carousel -->
+          <div class="d-flex overflow-auto gap-2 py-3 px-2 bg-light rounded" id="thumbnailCarousel">
+            <img src="img/input2.jpg" data-img="img/input2.jpg" data-video="img/video2.mp4" class="thumb active border border-warning rounded" style="height: 80px; cursor: pointer;">
+            <img src="img/input1.jpg" data-img="img/input1.jpg" data-video="img/video1.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
+            <img src="img/input3.jpg" data-img="img/input3.jpg" data-video="img/video3.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
+            <img src="img/input4.jpg" data-img="img/input4.jpg" data-video="img/video4.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
+            <!-- Add more thumbnails as needed -->
+          </div>
         </div>
-      </section> -->
+      </section>
+
+      <script>
+        // Thumbnail interaction script
+        const thumbnails = document.querySelectorAll('#thumbnailCarousel img');
+        const inputImg = document.getElementById('inputImage');
+        const video = document.getElementById('generatedVideo');
+
+        thumbnails.forEach(thumb => {
+          thumb.addEventListener('click', () => {
+            // Remove 'active' class from all
+            thumbnails.forEach(t => t.classList.remove('active', 'border-warning'));
+            thumb.classList.add('active', 'border-warning');
+
+            // Update input image and video
+            inputImg.src = thumb.dataset.img;
+            video.querySelector('source').src = thumb.dataset.video;
+            video.load();
+          });
+        });
+      </script>
+
           
 
       <section class="bar bg-white mb-0 padding-small">
