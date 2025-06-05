@@ -69,56 +69,103 @@
                 <!-- <strong class="text-dark-red">Conference highlight</strong> -->
               </p>
               
-              <!-- Qualitative Results moved here -->
+              <!-- Qualitative Results -->
               <div class="container">
                 <!-- Main display row -->
                 <div class="row mb-4">
-                  <div class="col-md-6 text-center">
+                  <!-- Input image -->
+                  <div class="col-md-4 text-center">
                     <h5>Input image</h5>
-                    <img id="inputImage" src="img/input_2_resized.png" class="img-fluid rounded shadow-sm" alt="Input Image">
+                    <img id="inputImage" src="img/input_0_resized.png"
+                        class="img-fluid rounded shadow-sm"
+                        alt="Input Image">
                   </div>
-                  <div class="col-md-6 text-center">
-                    <h5>Generated video</h5>
-                    <video id="generatedVideo" autoplay loop muted playsinline inline class="img-fluid rounded shadow-sm">
-                      <source src="img/2_adjusted.mp4" type="video/mp4">
+
+                  <!-- Generated video -->
+                  <div class="col-md-4 text-center">
+                    <h5>Generated video <span style="color: green;">(with VMem)</span></h5>
+                    <video id="generatedVideo" autoplay loop muted playsinline
+                          class="img-fluid rounded shadow-sm">
+                      <source src="img/video_0_pair/final_video_1.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+
+                  <!-- Video without memory -->
+                  <div class="col-md-4 text-center">
+                    <h5>Generated video <span style="color: red;"></span>(without VMem)</span></h5>
+                    <video id="noMemoryVideo" autoplay loop muted playsinline
+                          class="img-fluid rounded shadow-sm">
+                      <source src="img/video_0_pair/final_video_2.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                   </div>
                 </div>
 
                 <!-- Thumbnail carousel -->
-                <div class="d-flex flex-wrap justify-content-center gap-2 py-3 px-3 bg-light rounded" id="thumbnailCarousel">
-                  <img src="img/input_2_resized.png" data-img="img/input_2_resized.png" data-video="img/2_adjusted.mp4" class="thumb active border border-warning rounded" style="height: 80px; cursor: pointer;">
-                  <img src="img/input_1_resized.png" data-img="img/input_1_resized.png" data-video="img/1_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
-                  <img src="img/input_3_resized.png" data-img="img/input_3_resized.png" data-video="img/3_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
-                  <img src="img/input_4_resized.png" data-img="img/input_4_resized.png" data-video="img/4_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
-                  <img src="img/input_0_resized.png" data-img="img/input_0_resized.png" data-video="img/0_adjusted.mp4" class="thumb border rounded" style="height: 80px; cursor: pointer;">
+                <div class="d-flex flex-wrap justify-content-center gap-2 py-3 px-3
+                            bg-light rounded" id="thumbnailCarousel">
+                  <img src="img/input_0_resized.png"
+                      data-img="img/input_0_resized.png"
+                      data-video="img/video_0_pair/final_video_1.mp4"
+                      data-nomem="img/video_0_pair/final_video_2.mp4"
+                      class="thumb active border border-warning rounded"
+                      style="height: 80px; cursor: pointer;">
+                  <img src="img/input_1_resized.png"
+                      data-img="img/input_1_resized.png"
+                      data-video="img/video_1_pair/final_video_1.mp4"
+                      data-nomem="img/video_1_pair/final_video_2.mp4"
+                      class="thumb border rounded"
+                      style="height: 80px; cursor: pointer;">
+                  <img src="img/input_2_resized.png"
+                      data-img="img/input_2_resized.png"
+                      data-video="img/video_2_pair/final_video_1.mp4"
+                      data-nomem="img/video_2_pair/final_video_2.mp4"
+                      class="thumb border rounded"
+                      style="height: 80px; cursor: pointer;">
+                  <img src="img/input_3_resized.png"
+                      data-img="img/input_3_resized.png"
+                      data-video="img/video_3_pair/final_video_1.mp4"
+                      data-nomem="img/video_3_pair/final_video_2.mp4"
+                      class="thumb border rounded"
+                      style="height: 80px; cursor: pointer;">
+                  <img src="img/input_4_resized.png"
+                      data-img="img/input_4_resized.png"
+                      data-video="img/video_4_pair/final_video_1.mp4"
+                      data-nomem="img/video_4_pair/final_video_2.mp4"
+                      class="thumb border rounded"
+                      style="height: 80px; cursor: pointer;">
                   <!-- Add more thumbnails as needed -->
                 </div>
               </div>
 
               <script>
                 // Thumbnail interaction script
-                const thumbnails = document.querySelectorAll('#thumbnailCarousel img');
-                const inputImg = document.getElementById('inputImage');
-                const video = document.getElementById('generatedVideo');
+                const thumbnails     = document.querySelectorAll('#thumbnailCarousel img');
+                const inputImg       = document.getElementById('inputImage');
+                const genVideo       = document.getElementById('generatedVideo');
+                const noMemVideo     = document.getElementById('noMemoryVideo');
 
                 thumbnails.forEach(thumb => {
                   thumb.addEventListener('click', () => {
-                    // Remove 'active' class from all
+                    // Highlight active thumbnail
                     thumbnails.forEach(t => t.classList.remove('active', 'border-warning'));
                     thumb.classList.add('active', 'border-warning');
 
-                    // Update input image and video
-                    inputImg.src = thumb.dataset.img;
-                    video.querySelector('source').src = thumb.dataset.video;
-                    video.load();
+                    // Swap assets
+                    inputImg.src                         = thumb.dataset.img;
+                    genVideo.querySelector('source').src = thumb.dataset.video;
+                    noMemVideo.querySelector('source').src = thumb.dataset.nomem;
+
+                    // Reload videos so new sources play
+                    genVideo.load();
+                    noMemVideo.load();
                   });
                 });
               </script>
 
               <p class="lead">
-                We propose a novel <strong>memory mechanism</strong> for consistent autoregressive scene generation conditioned on camera input. 
+                We propose a novel <strong>plug-and-play memory mechanism</strong> for consistent <strong>autoregressive scene generation</strong> conditioned on camera input. 
                 Existing methods either rely on inpainting with explicit geometry estimation, which suffers from inaccuracies, or use limited context windows in video-based approaches, leading to poor long-term coherence. 
                 To overcome these issues, we introduce <strong>Surfel Memory of Views (VMem)</strong>, which anchors past views to <strong>surface elements (surfels)</strong> they observed. 
                 This enables conditioning novel view generation on <strong>the most relevant past views</strong> rather than just the most recent ones, enhancing <strong>long-term scene consistency</strong> while reducing computational cost.
