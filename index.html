@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VMem: Consistent Scene Generation with Surfel Memory of Views</title>
-    <meta name="description" content="VMem: Consistent Scene Generation with Surfel Memory of Views">
+    <title>VMem: Consistent Scene Generation with Surfel-Indexed View Memory</title>
+    <meta name="description" content="VMem: Consistent Scene Generation with Surfel-Indexed View Memory">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta name="robots" content="all,follow"> -->
     <meta name="robots" content="noindex, nofollow">
@@ -76,7 +76,7 @@
                   <!-- Input image -->
                   <div class="col-md-4 text-center">
                     <h5>Input image</h5>
-                    <img id="inputImage" src="img/input_0_resized.png"
+                    <img id="inputImage" src="img/input_0_resized.webp"
                         class="img-fluid rounded shadow-sm"
                         alt="Input Image">
                   </div>
@@ -86,7 +86,7 @@
                     <h5>Generated video <span style="color: green;">(with VMem)</span></h5>
                     <video id="generatedVideo" autoplay loop muted playsinline
                           class="img-fluid rounded shadow-sm">
-                      <source src="img/video_0_pair/final_video_1.mp4" type="video/mp4">
+                      <source src="img/video_0_pair/final_video_1_compressed.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -96,7 +96,7 @@
                     <h5>Generated video <span style="color: red;">(without VMem)</span></h5>
                     <video id="noMemoryVideo" autoplay loop muted playsinline
                           class="img-fluid rounded shadow-sm">
-                      <source src="img/video_0_pair/final_video_2.mp4" type="video/mp4">
+                      <source src="img/video_0_pair/final_video_2_compressed.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -105,34 +105,34 @@
                 <!-- Thumbnail carousel -->
                 <div class="d-flex flex-wrap justify-content-center gap-2 py-3 px-3
                             bg-light rounded" id="thumbnailCarousel">
-                  <img src="img/input_0_resized.png"
-                      data-img="img/input_0_resized.png"
-                      data-video="img/video_0_pair/final_video_1.mp4"
-                      data-nomem="img/video_0_pair/final_video_2.mp4"
+                  <img src="img/input_0_resized.webp"
+                      data-img="img/input_0_resized.webp"
+                      data-video="img/video_0_pair/final_video_1_compressed.mp4"
+                      data-nomem="img/video_0_pair/final_video_2_compressed.mp4"
                       class="thumb active border border-warning rounded"
                       style="height: 80px; cursor: pointer;">
-                  <img src="img/input_1_resized.png"
-                      data-img="img/input_1_resized.png"
-                      data-video="img/video_1_pair/final_video_1.mp4"
-                      data-nomem="img/video_1_pair/final_video_2.mp4"
+                  <img src="img/input_1_resized.webp"
+                      data-img="img/input_1_resized.webp"
+                      data-video="img/video_1_pair/final_video_1_compressed.mp4"
+                      data-nomem="img/video_1_pair/final_video_2_compressed.mp4"
                       class="thumb border rounded"
                       style="height: 80px; cursor: pointer;">
-                  <img src="img/input_2_resized.png"
-                      data-img="img/input_2_resized.png"
-                      data-video="img/video_2_pair/final_video_1.mp4"
-                      data-nomem="img/video_2_pair/final_video_2.mp4"
+                  <img src="img/input_2_resized.webp"
+                      data-img="img/input_2_resized.webp"
+                      data-video="img/video_2_pair/final_video_1_compressed.mp4"
+                      data-nomem="img/video_2_pair/final_video_2_compressed.mp4"
                       class="thumb border rounded"
                       style="height: 80px; cursor: pointer;">
-                  <img src="img/input_3_resized.png"
-                      data-img="img/input_3_resized.png"
-                      data-video="img/video_3_pair/final_video_1.mp4"
-                      data-nomem="img/video_3_pair/final_video_2.mp4"
+                  <img src="img/input_3_resized.webp"
+                      data-img="img/input_3_resized.webp"
+                      data-video="img/video_3_pair/final_video_1_compressed.mp4"
+                      data-nomem="img/video_3_pair/final_video_2_compressed.mp4"
                       class="thumb border rounded"
                       style="height: 80px; cursor: pointer;">
-                  <img src="img/input_4_resized.png"
-                      data-img="img/input_4_resized.png"
-                      data-video="img/video_4_pair/final_video_1.mp4"
-                      data-nomem="img/video_4_pair/final_video_2.mp4"
+                  <img src="img/input_4_resized.webp"
+                      data-img="img/input_4_resized.webp"
+                      data-video="img/video_4_pair/final_video_1_compressed.mp4"
+                      data-nomem="img/video_4_pair/final_video_2_compressed.mp4"
                       class="thumb border rounded"
                       style="height: 80px; cursor: pointer;">
                   <!-- Add more thumbnails as needed -->
