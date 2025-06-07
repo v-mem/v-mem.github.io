@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VMem: Consistent Scene Generation with Surfel-Indexed View Memory</title>
-    <meta name="description" content="VMem: Consistent Scene Generation with Surfel-Indexed View Memory">
+    <title>VMem: Consistent Video Scene Generation with Surfel-Indexed View Memory</title>
+    <meta name="description" content="VMem: Consistent Video Scene Generation with Surfel-Indexed View Memory">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta name="robots" content="all,follow"> -->
     <meta name="robots" content="noindex, nofollow">
@@ -53,7 +53,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="heading-light text-center mb-medium">
-                <h1>VMem: Consistent Scene Generation with Surfel Memory of Views</h1>
+                <h1>VMem: Consistent Video Scene Generation with Surfel-Indexed View Memory</h1>
               </div>
               <p class="lead text-md-center">
                 <a href="https://runjiali-rl.github.io/">Runjia Li</a>,
@@ -193,7 +193,7 @@
               <div class="col-md-12">
                 <div class="img-fluid embed-responsive embed-responsive-16by9">
                   <video autoplay loop muted playsinline inline>
-                    <source src="img/teaser.mp4" type="video/mp4">
+                    <source src="img/teaser_compressed.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
@@ -207,7 +207,7 @@
           <div class="row">
             <div class="col-md-12">
               <h2>Approach</h2>
-              <img src="img/vmem_method.png" alt="" class="img-fluid image1 mb-small">
+              <img src="img/vmem_method.webp" alt="" class="img-fluid image1 mb-small">
 
               <p class="lead mb-small"> 
                 Our method retrieves the most relevant past views from the surfel-indexed memory using the target camera as a query.
@@ -229,7 +229,7 @@
             <div class="col-md-12">
               <h2>Surfel-Indexed View Memory</h2>
 
-              <img src="img/vmem_spatial_memory.png" alt="" class="img-fluid image1 mb-small">
+              <img src="img/vmem_spatial_memory.webp" alt="" class="img-fluid image1 mb-small">
               <p class="lead mb-small"> 
                 We use a <strong>surfel-indexed memory</strong> to retrieve and update relevant past views. The <strong>reading module</strong> renders surfels to find the most frequently represented past timestamps and retrieves the top-K views as references. The <strong>writing module</strong> estimates the geometry of the newly generated view, converts it into surfels, and merges them into the memory. The view is then stored along with its timestamp and camera pose for future use.
               </p>
