@@ -166,10 +166,7 @@
               </script>
 
               <p class="lead">
-                We propose a novel <strong>plug-and-play memory mechanism</strong> for consistent <strong>autoregressive scene generation</strong> conditioned on camera input. 
-                Existing methods either rely on inpainting with explicit geometry estimation, which suffers from inaccuracies, or use limited context windows in video-based approaches, leading to poor long-term coherence. 
-                To overcome these issues, we introduce <strong>Surfel Memory of Views (VMem)</strong>, which anchors past views to <strong>surface elements (surfels)</strong> they observed. 
-                This enables conditioning novel view generation on <strong>the most relevant past views</strong> rather than just the most recent ones, enhancing <strong>long-term scene consistency</strong> while reducing computational cost.
+                We propose a novel <strong>plug-and-play memory mechanism</strong> for video models to enable consistent <strong>autoregressive scene generation</strong> conditioned on camera input. Existing methods either rely on inpainting with explicit geometry estimation, which is prone to inaccuracies, or adopt video-based approaches with limited context windows, resulting in poor long-term coherence. To address these limitations, we introduce <strong>Surfel Memory of Views (VMem)</strong>, which anchors past views to the <strong>surface elements (surfels)</strong> of the scene they observed. This allows novel view generation to be conditioned on <strong>the most relevant past views</strong>, rather than solely on the most recent ones, improving <strong>long-term scene consistency</strong> while reducing computational cost.
               </p>
 
               <div class="see-more text-center">
