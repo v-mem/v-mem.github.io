@@ -74,7 +74,7 @@
                   <!-- Input image -->
                   <div class="col-md-4 text-center">
                     <h5>Input image</h5>
-                    <img id="inputImage" src="img/input_0_resized.webp"
+                    <img id="inputImage" src="img/input_2_resized.webp"
                         class="img-fluid rounded shadow-sm"
                         alt="Input Image">
                   </div>
@@ -84,7 +84,7 @@
                     <h5>Generated video <span style="color: green;">(with VMem)</span></h5>
                     <video id="generatedVideo" autoplay loop muted playsinline
                           class="img-fluid rounded shadow-sm">
-                      <source src="img/video_0_pair/final_video_1_compressed.mp4" type="video/mp4">
+                      <source src="img/video_2_pair/final_video_1_compressed.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -94,7 +94,7 @@
                     <h5>Generated video <span style="color: red;">(without VMem)</span></h5>
                     <video id="noMemoryVideo" autoplay loop muted playsinline
                           class="img-fluid rounded shadow-sm">
-                      <source src="img/video_0_pair/final_video_2_compressed.mp4" type="video/mp4">
+                      <source src="img/video_2_pair/final_video_2_compressed.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -103,22 +103,22 @@
                 <!-- Thumbnail carousel -->
                 <div class="d-flex flex-wrap justify-content-center gap-2 py-3 px-3
                             bg-light rounded" id="thumbnailCarousel">
+                  <img src="img/input_2_resized.webp"
+                      data-img="img/input_2_resized.webp"
+                      data-video="img/video_2_pair/final_video_1_compressed.mp4"
+                      data-nomem="img/video_2_pair/final_video_2_compressed.mp4"
+                      class="thumb active border border-warning rounded"
+                      style="height: 80px; cursor: pointer;">
                   <img src="img/input_0_resized.webp"
                       data-img="img/input_0_resized.webp"
                       data-video="img/video_0_pair/final_video_1_compressed.mp4"
                       data-nomem="img/video_0_pair/final_video_2_compressed.mp4"
-                      class="thumb active border border-warning rounded"
+                      class="thumb border rounded"
                       style="height: 80px; cursor: pointer;">
                   <img src="img/input_1_resized.webp"
                       data-img="img/input_1_resized.webp"
                       data-video="img/video_1_pair/final_video_1_compressed.mp4"
                       data-nomem="img/video_1_pair/final_video_2_compressed.mp4"
-                      class="thumb border rounded"
-                      style="height: 80px; cursor: pointer;">
-                  <img src="img/input_2_resized.webp"
-                      data-img="img/input_2_resized.webp"
-                      data-video="img/video_2_pair/final_video_1_compressed.mp4"
-                      data-nomem="img/video_2_pair/final_video_2_compressed.mp4"
                       class="thumb border rounded"
                       style="height: 80px; cursor: pointer;">
                   <img src="img/input_3_resized.webp"
