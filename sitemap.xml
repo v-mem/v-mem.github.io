@@ -9,10 +9,10 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     
-    <!-- Important images for SEO - Key figure first -->
+    <!-- Important images -->
     <image:image>
       <image:loc>https://v-mem.github.io/img/vmem_method.webp</image:loc>
-      <image:title>VMem Method Overview - Key Figure</image:title>
+      <image:title>VMem Method Overview</image:title>
       <image:caption>VMem method showing surfel-indexed view memory for consistent video scene generation</image:caption>
     </image:image>
     

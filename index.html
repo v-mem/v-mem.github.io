@@ -136,6 +136,29 @@
         margin-right: auto;
       }
 
+      .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        display: none;
+      }
+
+      .spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #007bff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
     </style>
   </head>
   <body>
@@ -184,6 +207,9 @@
                         <source src="img/video_2_pair/final_video_2_compressed.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                       </video>
+                      <div id="noMemSpinner" class="loading-spinner">
+                        <div class="spinner"></div>
+                      </div>
                       <img src="img/overlay_badge.png" alt="badge" class="overlay-badge">
                     </div>
                   </div>
@@ -197,6 +223,9 @@
                         <source src="img/video_2_pair/final_video_1_compressed.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                       </video>
+                      <div id="genVideoSpinner" class="loading-spinner">
+                        <div class="spinner"></div>
+                      </div>
                       <img src="img/overlay_badge.png" alt="badge" class="overlay-badge">
                     </div>
                 </div>
@@ -244,6 +273,49 @@
                 const inputImg       = document.getElementById('inputImage');
                 const genVideo       = document.getElementById('generatedVideo');
                 const noMemVideo     = document.getElementById('noMemoryVideo');
+                const genVideoSpinner = document.getElementById('genVideoSpinner');
+                const noMemSpinner   = document.getElementById('noMemSpinner');
+
+                // Timeout tracking for delayed spinner display
+                let genVideoTimeout = null;
+                let noMemVideoTimeout = null;
+
+                // Function to show spinner with delay
+                function showSpinnerDelayed(spinner, timeoutRef, delay = 300) {
+                  clearTimeout(timeoutRef);
+                  return setTimeout(() => {
+                    spinner.style.display = 'block';
+                  }, delay);
+                }
+
+                // Function to hide spinner and clear timeout
+                function hideSpinner(spinner, timeoutRef) {
+                  clearTimeout(timeoutRef);
+                  spinner.style.display = 'none';
+                }
+
+                // Show spinners initially for default videos (with delay)
+                genVideoTimeout = showSpinnerDelayed(genVideoSpinner, genVideoTimeout);
+                noMemVideoTimeout = showSpinnerDelayed(noMemSpinner, noMemVideoTimeout);
+
+                // Add event listeners for video loading states
+                genVideo.addEventListener('loadstart', () => {
+                  genVideoTimeout = showSpinnerDelayed(genVideoSpinner, genVideoTimeout);
+                });
+                genVideo.addEventListener('waiting', () => {
+                  genVideoTimeout = showSpinnerDelayed(genVideoSpinner, genVideoTimeout);
+                });
+                genVideo.addEventListener('playing', () => hideSpinner(genVideoSpinner, genVideoTimeout));
+                genVideo.addEventListener('error', () => hideSpinner(genVideoSpinner, genVideoTimeout));
+
+                noMemVideo.addEventListener('loadstart', () => {
+                  noMemVideoTimeout = showSpinnerDelayed(noMemSpinner, noMemVideoTimeout);
+                });
+                noMemVideo.addEventListener('waiting', () => {
+                  noMemVideoTimeout = showSpinnerDelayed(noMemSpinner, noMemVideoTimeout);
+                });
+                noMemVideo.addEventListener('playing', () => hideSpinner(noMemSpinner, noMemVideoTimeout));
+                noMemVideo.addEventListener('error', () => hideSpinner(noMemSpinner, noMemVideoTimeout));
 
                 thumbnails.forEach(thumb => {
                   thumb.addEventListener('click', () => {
