@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <url>
+    <loc>https://v-mem.github.io/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Important images for SEO - Key figure first -->
+    <image:image>
+      <image:loc>https://v-mem.github.io/img/vmem_method.webp</image:loc>
+      <image:title>VMem Method Overview - Key Figure</image:title>
+      <image:caption>VMem method showing surfel-indexed view memory for consistent video scene generation</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://v-mem.github.io/img/vmem_spatial_memory.webp</image:loc>
+      <image:title>Surfel-Indexed View Memory Architecture</image:title>
+      <image:caption>Architecture showing reading and writing modules for spatial memory management</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://v-mem.github.io/img/paper_montage.webp</image:loc>
+      <image:title>VMem Research Paper</image:title>
+      <image:caption>VMem research paper preview - ICCV 2025</image:caption>
+    </image:image>
+
+    <!-- Video content -->
+    <video:video>
+      <video:thumbnail_loc>https://v-mem.github.io/img/input_2_resized.webp</video:thumbnail_loc>
+      <video:title>VMem Quick Explanation Video</video:title>
+      <video:description>Quick explanation of VMem: Consistent Interactive Video Scene Generation with Surfel-Indexed View Memory</video:description>
+      <video:content_loc>https://v-mem.github.io/img/video-1min-encoded_720p.mp4</video:content_loc>
+      <video:duration>60</video:duration>
+    </video:video>
+    
+  </url>
+  
+</urlset> 

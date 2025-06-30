@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of vendor files and assets that don't need indexing
+Disallow: /vendor/
+Disallow: /js/
+Disallow: /css/
+
+# Allow important assets for preview
+Allow: /img/
+
+# Sitemap location (update this URL when you have a sitemap)
+Sitemap: https://v-mem.github.io/sitemap.xml 
