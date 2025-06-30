@@ -317,6 +317,33 @@
                 noMemVideo.addEventListener('playing', () => hideSpinner(noMemSpinner, noMemVideoTimeout));
                 noMemVideo.addEventListener('error', () => hideSpinner(noMemSpinner, noMemVideoTimeout));
 
+                // Video synchronization
+                let syncInProgress = false; // Prevent sync loops
+
+                function syncVideos(sourceVideo, targetVideo) {
+                  if (syncInProgress) return;
+                  syncInProgress = true;
+                  
+                  targetVideo.currentTime = sourceVideo.currentTime;
+                  if (!sourceVideo.paused) {
+                    targetVideo.play().catch(() => {}); // Ignore autoplay restrictions
+                  } else {
+                    targetVideo.pause();
+                  }
+                  
+                  setTimeout(() => { syncInProgress = false; }, 100);
+                }
+
+                // Sync genVideo -> noMemVideo
+                genVideo.addEventListener('play', () => syncVideos(genVideo, noMemVideo));
+                genVideo.addEventListener('pause', () => syncVideos(genVideo, noMemVideo));
+                genVideo.addEventListener('seeked', () => syncVideos(genVideo, noMemVideo));
+
+                // Sync noMemVideo -> genVideo  
+                noMemVideo.addEventListener('play', () => syncVideos(noMemVideo, genVideo));
+                noMemVideo.addEventListener('pause', () => syncVideos(noMemVideo, genVideo));
+                noMemVideo.addEventListener('seeked', () => syncVideos(noMemVideo, genVideo));
+
                 thumbnails.forEach(thumb => {
                   thumb.addEventListener('click', () => {
                     // Highlight active thumbnail
